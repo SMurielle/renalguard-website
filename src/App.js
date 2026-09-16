@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
-  FiPhone, FiMail, FiLinkedin, FiMapPin, FiMenu, FiX,
+  FiPhone, FiMail, FiLinkedin, FiMapPin, FiX,
   FiShield, FiActivity, FiCpu, FiSun, FiAlertCircle,
   FiUsers, FiHeart, FiGlobe, FiChevronRight, FiTwitter,
   FiInstagram, FiFacebook, FiArrowUp
@@ -995,7 +995,7 @@ function Footer({ t, isDark, lang, logoVersion }) {
             <p style={{color:t.textMuted,fontSize:'14px',lineHeight:'1.7',maxWidth:'280px'}}>{tr.footerDesc}</p>
             <div style={{display:'flex',gap:'10px',marginTop:'20px'}}>
               {[FiTwitter,FiLinkedin,FiInstagram,FiFacebook].map((Icon,i)=>(
-                <a key={i} href="#" style={{width:'34px',height:'34px',backgroundColor:t.bgCard,border:`1px solid ${t.border}`,borderRadius:'8px',display:'flex',alignItems:'center',justifyContent:'center',textDecoration:'none',transition:'all 0.2s'}}
+                <a key={i} href="/" style={{width:'34px',height:'34px',backgroundColor:t.bgCard,border:`1px solid ${t.border}`,borderRadius:'8px',display:'flex',alignItems:'center',justifyContent:'center',textDecoration:'none',transition:'all 0.2s'}}
                   onMouseEnter={e=>e.currentTarget.style.backgroundColor=t.accent}
                   onMouseLeave={e=>e.currentTarget.style.backgroundColor=t.bgCard}>
                   <Icon size={15} color={t.textMuted}/>
@@ -1066,7 +1066,7 @@ function App() {
     document.body.style.backgroundColor = t.bg;
     document.body.style.transition = 'background-color 0.3s ease';
     document.body.style.margin = '0';
-  }, [isDark]);
+  }, [isDark, t.bg]);
 
   return (
     <div style={{fontFamily:'-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif',transition:'all 0.3s ease'}}>
@@ -1103,7 +1103,7 @@ export default App;
 //   }, []);
 //   useEffect(() => {
 //     document.body.style.backgroundColor = t.bg;
-//   }, [isDark]);
+//   }, [isDark, t.bg]);
 //   return (
 //     <div style={{fontFamily:'-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif'}}>
 //       <Navbar t={t} isDark={isDark} toggleTheme={()=>setIsDark(!isDark)} lang={lang} setLang={setLang} logoVersion={logoVersion}/>
