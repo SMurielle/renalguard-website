@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
-  FiPhone, FiMail, FiLinkedin, FiMapPin, FiX,
+  FiPhone, FiMail, FiLinkedin, FiMapPin,
   FiShield, FiActivity, FiCpu, FiSun, FiAlertCircle,
   FiUsers, FiHeart, FiGlobe, FiChevronRight, FiTwitter,
   FiInstagram, FiFacebook, FiArrowUp
