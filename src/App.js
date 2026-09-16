@@ -679,111 +679,111 @@ function Impact({ t, isDark, lang }) {
 }
 
 // ── TEAM ─────────────────────────────────────────────────
-function Team({ t, lang }) {
-  const tr = translations[lang];
-  const members = [
-    {
-      name:'Kombou Komga Murielle Nahomy',
-      role:'Founder, Lead Developer & UX/UI Designer',
-      photo:'Photo_Murielle_KOMBOU.png',
-      awards:['Female Winner, POESAM 2026','2nd Place, Blue Tech Challenge 2024'],
-      desc:'Software Engineering student at PK Fokam Institute of Excellence & Developer at PKFokam Research Center, Yaoundé. Professional UX/UI Designer building African-owned health solutions that reach patients before it is too late.',
-      showLinkedin:true,
-      linkedinUrl:'https://www.linkedin.com/in/murielle-kombou-0681562b9/',
-      awardColor: '#22c55e'
-    },
-    {
-      name:'Kamgaing Kamdem Fred Arold',
-      role:'Co-Founder, Hardware Engineer & Data Scientist at MTN',
-      photo:'Kamdem Profile.jpg',
-      awards:[],
-      desc:'Expert in IoT hardware design, embedded systems and data science. Leading the physical development of the RenalGuard wearable device while leveraging data expertise from MTN Cameroon.',
-      showLinkedin:true,
-      linkedinUrl:'https://linkedin.com/in/fred-arold-kamdem-kamgaing-a41631214',
-      awardColor: t.accent
-    },
-    {
-      name:'Dr Rosine Esobo',
-      role:'Nephrologist & Clinical Research Lead',
-      photo:'EsoboProfile.jpg',
-      awards:['Hôpital Central de Yaoundé'],
-      desc:'Specialist in nephrology and clinical research with extensive experience in kidney disease management in Cameroon. Providing medical validation and clinical oversight for the RenalGuard device.',
-      showLinkedin:false,
-      linkedinUrl:'',
-      awardColor: t.accent
-    },
-    {
-      name:'Andrea Tindo',
-      role:'Co-Founder, Business Development Lead & Developer at PKFokam Research Center',
-      photo:'TindoProfile.jpg',
-      awards:[],
-      desc:'Expert in business development, strategic partnerships and market expansion across Africa. Leading RenalGuard growth strategy, investor relations and healthcare ecosystem partnerships.',
-      showLinkedin:false,
-      linkedinUrl:'',
-      awardColor: t.accent
-    },
-  ];
-  return (
-    <section id="team" style={{backgroundColor:t.bg,padding:'100px 0'}}>
-      <div style={{maxWidth:'1280px',margin:'0 auto',padding:'0 24px'}}>
-        <AnimSection>
-          <div style={{textAlign:'center',marginBottom:'64px'}}>
-            <h2 style={{color:t.text,fontSize:'48px',fontWeight:'900',marginBottom:'16px',letterSpacing:'-1px'}}>{tr.teamTitle}</h2>
-            <p style={{color:t.textSecondary,fontSize:'18px'}}>{tr.teamSubtitle}</p>
-          </div>
-        </AnimSection>
-        <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:'24px',alignItems:'stretch'}}>
-          {members.map((m,i)=>(
-            <AnimSection key={i} animation={i===0?'anim-fadeInLeft':i===3?'anim-fadeInRight':'anim-fadeInUp'}>
-              <div style={{
-                backgroundColor:t.bgCard,border:`1px solid ${t.border}`,
-                borderRadius:'24px',padding:'28px',textAlign:'center',
-                transition:'all 0.3s ease',height:'100%',
-                display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'flex-start'
-              }}
-                onMouseEnter={e=>e.currentTarget.style.transform='translateY(-6px)'}
-                onMouseLeave={e=>e.currentTarget.style.transform='translateY(0)'}>
-                <img src={require(`./${m.photo}`)} alt={m.name}
-                  style={{width:'90px',height:'90px',borderRadius:'50%',objectFit:'cover',
-                    margin:'0 auto 16px',display:'block',
-                    border:`3px solid ${t.accent}`,
-                    boxShadow:`0 6px 20px ${t.shadow}`}}/>
-                <h3 style={{color:t.text,fontSize:'15px',fontWeight:'800',marginBottom:'4px'}}>{m.name}</h3>
-                <p style={{color:t.accent,fontWeight:'700',marginBottom:'14px',fontSize:'13px',lineHeight:'1.4'}}>{m.role}</p>
-                {m.awards.length>0 && (
-                  <div style={{
-                    backgroundColor: m.awardColor === '#22c55e' ? 'rgba(34,197,94,0.12)' : t.accentLight,
-                    borderRadius:'10px',padding:'10px',marginBottom:'12px',width:'100%',
-                    border: m.awardColor === '#22c55e' ? '1px solid rgba(34,197,94,0.3)' : `1px solid ${t.border}`
-                  }}>
-                    {m.awards.map((a,j)=>(
-                      <p key={j} style={{
-                        color: m.awardColor === '#22c55e' ? '#22c55e' : t.accent,
-                        fontSize:'11px',fontWeight:'700',margin:'2px 0'
-                      }}>
-                        {m.awardColor === '#22c55e' ? '🏆' : '📍'} {a}
-                      </p>
-                    ))}
-                  </div>
-                )}
-                <p style={{color:t.textSecondary,fontSize:'12px',lineHeight:'1.7',marginBottom:'16px',flexGrow:1}}>{m.desc}</p>
-                {m.showLinkedin && (
-                  <a href={m.linkedinUrl} target="_blank" rel="noreferrer"
-                    style={{backgroundColor:t.accent,color:'white',padding:'7px 16px',
-                      borderRadius:'999px',textDecoration:'none',fontSize:'12px',
-                      fontWeight:'700',display:'inline-flex',alignItems:'center',gap:'6px',
-                      marginTop:'auto'}}>
-                    <FiLinkedin size={12}/> LinkedIn
-                  </a>
-                )}
-              </div>
-            </AnimSection>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+// function Team({ t, lang }) {
+//   const tr = translations[lang];
+//   const members = [
+//     {
+//       name:'Kombou Komga Murielle Nahomy',
+//       role:'Founder, Lead Developer & UX/UI Designer',
+//       photo:'Photo_Murielle_KOMBOU.png',
+//       awards:['Female Winner, POESAM 2026','2nd Place, Blue Tech Challenge 2024'],
+//       desc:'Software Engineering student at PK Fokam Institute of Excellence & Developer at PKFokam Research Center, Yaoundé. Professional UX/UI Designer building African-owned health solutions that reach patients before it is too late.',
+//       showLinkedin:true,
+//       linkedinUrl:'https://www.linkedin.com/in/murielle-kombou-0681562b9/',
+//       awardColor: '#22c55e'
+//     },
+//     {
+//       name:'Kamgaing Kamdem Fred Arold',
+//       role:'Co-Founder, Hardware Engineer & Data Scientist at MTN',
+//       photo:'Kamdem Profile.jpg',
+//       awards:[],
+//       desc:'Expert in IoT hardware design, embedded systems and data science. Leading the physical development of the RenalGuard wearable device while leveraging data expertise from MTN Cameroon.',
+//       showLinkedin:true,
+//       linkedinUrl:'https://linkedin.com/in/fred-arold-kamdem-kamgaing-a41631214',
+//       awardColor: t.accent
+//     },
+//     {
+//       name:'Dr Rosine Esobo',
+//       role:'Nephrologist & Clinical Research Lead',
+//       photo:'EsoboProfile.jpg',
+//       awards:['Hôpital Central de Yaoundé'],
+//       desc:'Specialist in nephrology and clinical research with extensive experience in kidney disease management in Cameroon. Providing medical validation and clinical oversight for the RenalGuard device.',
+//       showLinkedin:false,
+//       linkedinUrl:'',
+//       awardColor: t.accent
+//     },
+//     {
+//       name:'Andrea Tindo',
+//       role:'Co-Founder, Business Development Lead & Developer at PKFokam Research Center',
+//       photo:'TindoProfile.jpg',
+//       awards:[],
+//       desc:'Expert in business development, strategic partnerships and market expansion across Africa. Leading RenalGuard growth strategy, investor relations and healthcare ecosystem partnerships.',
+//       showLinkedin:false,
+//       linkedinUrl:'',
+//       awardColor: t.accent
+//     },
+//   ];
+//   return (
+//     <section id="team" style={{backgroundColor:t.bg,padding:'100px 0'}}>
+//       <div style={{maxWidth:'1280px',margin:'0 auto',padding:'0 24px'}}>
+//         <AnimSection>
+//           <div style={{textAlign:'center',marginBottom:'64px'}}>
+//             <h2 style={{color:t.text,fontSize:'48px',fontWeight:'900',marginBottom:'16px',letterSpacing:'-1px'}}>{tr.teamTitle}</h2>
+//             <p style={{color:t.textSecondary,fontSize:'18px'}}>{tr.teamSubtitle}</p>
+//           </div>
+//         </AnimSection>
+//         <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:'24px',alignItems:'stretch'}}>
+//           {members.map((m,i)=>(
+//             <AnimSection key={i} animation={i===0?'anim-fadeInLeft':i===3?'anim-fadeInRight':'anim-fadeInUp'}>
+//               <div style={{
+//                 backgroundColor:t.bgCard,border:`1px solid ${t.border}`,
+//                 borderRadius:'24px',padding:'28px',textAlign:'center',
+//                 transition:'all 0.3s ease',height:'100%',
+//                 display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'flex-start'
+//               }}
+//                 onMouseEnter={e=>e.currentTarget.style.transform='translateY(-6px)'}
+//                 onMouseLeave={e=>e.currentTarget.style.transform='translateY(0)'}>
+//                 <img src={require(`./${m.photo}`)} alt={m.name}
+//                   style={{width:'90px',height:'90px',borderRadius:'50%',objectFit:'cover',
+//                     margin:'0 auto 16px',display:'block',
+//                     border:`3px solid ${t.accent}`,
+//                     boxShadow:`0 6px 20px ${t.shadow}`}}/>
+//                 <h3 style={{color:t.text,fontSize:'15px',fontWeight:'800',marginBottom:'4px'}}>{m.name}</h3>
+//                 <p style={{color:t.accent,fontWeight:'700',marginBottom:'14px',fontSize:'13px',lineHeight:'1.4'}}>{m.role}</p>
+//                 {m.awards.length>0 && (
+//                   <div style={{
+//                     backgroundColor: m.awardColor === '#22c55e' ? 'rgba(34,197,94,0.12)' : t.accentLight,
+//                     borderRadius:'10px',padding:'10px',marginBottom:'12px',width:'100%',
+//                     border: m.awardColor === '#22c55e' ? '1px solid rgba(34,197,94,0.3)' : `1px solid ${t.border}`
+//                   }}>
+//                     {m.awards.map((a,j)=>(
+//                       <p key={j} style={{
+//                         color: m.awardColor === '#22c55e' ? '#22c55e' : t.accent,
+//                         fontSize:'11px',fontWeight:'700',margin:'2px 0'
+//                       }}>
+//                         {m.awardColor === '#22c55e' ? '🏆' : '📍'} {a}
+//                       </p>
+//                     ))}
+//                   </div>
+//                 )}
+//                 <p style={{color:t.textSecondary,fontSize:'12px',lineHeight:'1.7',marginBottom:'16px',flexGrow:1}}>{m.desc}</p>
+//                 {m.showLinkedin && (
+//                   <a href={m.linkedinUrl} target="_blank" rel="noreferrer"
+//                     style={{backgroundColor:t.accent,color:'white',padding:'7px 16px',
+//                       borderRadius:'999px',textDecoration:'none',fontSize:'12px',
+//                       fontWeight:'700',display:'inline-flex',alignItems:'center',gap:'6px',
+//                       marginTop:'auto'}}>
+//                     <FiLinkedin size={12}/> LinkedIn
+//                   </a>
+//                 )}
+//               </div>
+//             </AnimSection>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+//}
 // function Team({ t, lang }) {
 //   const tr = translations[lang];
 //   const members = [
