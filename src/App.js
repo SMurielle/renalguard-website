@@ -349,7 +349,7 @@ function AnimSection({ children, animation='anim-fadeInUp', style={} }) {
 
 // ── NAVBAR ───────────────────────────────────────────────
 function Navbar({ t, isDark, toggleTheme, lang, setLang, logoVersion }) {
-  const [menuOpen, setMenuOpen] = useState(false);
+  
   const [scrolled, setScrolled] = useState(false);
   const tr = translations[lang];
   useEffect(() => {
