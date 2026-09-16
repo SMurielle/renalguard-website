@@ -1029,7 +1029,7 @@ function Footer({ t, isDark, lang, logoVersion }) {
             <div style={{marginTop:'20px',backgroundColor:t.accentLight,borderRadius:'12px',padding:'14px'}}>
               <div style={{display:'flex',alignItems:'center',gap:'8px'}}>
                 <MdOutlineScience size={18} color={t.accent}/>
-                <span style={{color:t.accent,fontSize:'12px',fontWeight:'700'}}>renalguard.health</span>
+                <span style={{color:t.accent,fontSize:'12px',fontWeight:'700'}}>renalguard.live</span>
               </div>
             </div>
           </div>
