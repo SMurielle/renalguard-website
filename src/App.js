@@ -704,7 +704,7 @@ function Team({ t, lang }) {
     },
     {
       name:'Dr Rosine Esobo',
-      role:'Co-Founder, Nephrologist & Clinical Research Lead',
+      role:'Nephrologist & Clinical Research Lead',
       photo:'EsoboProfile.jpg',
       awards:['Hôpital Central de Yaoundé'],
       desc:'Specialist in nephrology and clinical research with extensive experience in kidney disease management in Cameroon. Providing medical validation and clinical oversight for the RenalGuard device.',
@@ -714,7 +714,7 @@ function Team({ t, lang }) {
     },
     {
       name:'Andrea Tindo',
-      role:'Co-Founder & Business Development Lead',
+      role:'Co-Founder, Business Development Lead & Developer at PKFokam Research Center',
       photo:'TindoProfile.jpg',
       awards:[],
       desc:'Expert in business development, strategic partnerships and market expansion across Africa. Leading RenalGuard growth strategy, investor relations and healthcare ecosystem partnerships.',
