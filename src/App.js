@@ -890,164 +890,164 @@ function Team({ t, lang }) {
 // }
 
 // ── CONTACT ──────────────────────────────────────────────
-function Contact({ t, lang }) {
-  const tr = translations[lang];
-  const [form, setForm] = useState({name:'',email:'',message:''});
-  const [errors, setErrors] = useState({name:'',email:'',message:''});
-  const [sent, setSent] = useState(false);
+// function Contact({ t, lang }) {
+//   const tr = translations[lang];
+//   const [form, setForm] = useState({name:'',email:'',message:''});
+//   const [errors, setErrors] = useState({name:'',email:'',message:''});
+//   const [sent, setSent] = useState(false);
 
-  const validateEmail = (email) => {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  };
+//   const validateEmail = (email) => {
+//     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+//   };
 
-  const validateField = (key, value) => {
-    if (!value.trim()) return 'This field is required.';
-    if (key === 'email' && !validateEmail(value)) return 'Please enter a valid email address.';
-    return '';
-  };
+//   const validateField = (key, value) => {
+//     if (!value.trim()) return 'This field is required.';
+//     if (key === 'email' && !validateEmail(value)) return 'Please enter a valid email address.';
+//     return '';
+//   };
 
-  const handleChange = (key, value) => {
-    setForm({...form, [key]: value});
-    setErrors({...errors, [key]: validateField(key, value)});
-  };
+//   const handleChange = (key, value) => {
+//     setForm({...form, [key]: value});
+//     setErrors({...errors, [key]: validateField(key, value)});
+//   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const newErrors = {
-      name: validateField('name', form.name),
-      email: validateField('email', form.email),
-      message: validateField('message', form.message),
-    };
-    setErrors(newErrors);
-    if (Object.values(newErrors).every(e => e === '')) {
-      setSent(true);
-    }
-  };
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     const newErrors = {
+//       name: validateField('name', form.name),
+//       email: validateField('email', form.email),
+//       message: validateField('message', form.message),
+//     };
+//     setErrors(newErrors);
+//     if (Object.values(newErrors).every(e => e === '')) {
+//       setSent(true);
+//     }
+//   };
 
-  return (
-    <section id="contact" style={{
-      backgroundImage:`linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(${require('./RenalGuard3.jpg')})`,
-      backgroundSize:'cover', backgroundPosition:'center', backgroundAttachment:'fixed',
-      padding:'100px 0'
-    }}>
-      <div style={{maxWidth:'1280px',margin:'0 auto',padding:'0 24px'}}>
-        <AnimSection>
-          <div style={{textAlign:'center',marginBottom:'64px'}}>
-            <h2 style={{color:'white',fontSize:'48px',fontWeight:'900',marginBottom:'16px',letterSpacing:'-1px'}}>{tr.contactTitle}</h2>
-            <p style={{color:'rgba(255,255,255,0.8)',fontSize:'18px'}}>{tr.contactSubtitle}</p>
-          </div>
-        </AnimSection>
-        <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'64px',alignItems:'start'}}>
-          <AnimSection animation="anim-fadeInLeft">
-            <div>
-              <h3 style={{color:'white',fontSize:'24px',fontWeight:'800',marginBottom:'24px'}}>RenalGuard</h3>
-              {[
-                {icon:<FiMail size={20} color={t.accent}/>,text:'a.muriellesarah@gmail.com'},
-                {icon:<FiPhone size={20} color={t.accent}/>,text:'+237 657 393 103'},
-                {icon:<FiMapPin size={20} color={t.accent}/>,text:'Yaoundé, Cameroon'},
-                {icon:<FiLinkedin size={20} color={t.accent}/>,text:'linkedin.com/in/murielle-kombou'}
-              ].map((item,i)=>(
-                <div key={i} style={{
-                  display:'flex',alignItems:'center',gap:'12px',
-                  backgroundColor:'rgba(255,255,255,0.12)',
-                  border:'1px solid rgba(255,255,255,0.2)',
-                  borderRadius:'12px',padding:'14px 18px',marginBottom:'12px',
-                  backdropFilter:'blur(10px)'
-                }}>
-                  {item.icon}
-                  <span style={{color:'rgba(255,255,255,0.9)',fontSize:'15px'}}>{item.text}</span>
-                </div>
-              ))}
-            </div>
-          </AnimSection>
+//   return (
+//     <section id="contact" style={{
+//       backgroundImage:`linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(${require('./RenalGuard3.jpg')})`,
+//       backgroundSize:'cover', backgroundPosition:'center', backgroundAttachment:'fixed',
+//       padding:'100px 0'
+//     }}>
+//       <div style={{maxWidth:'1280px',margin:'0 auto',padding:'0 24px'}}>
+//         <AnimSection>
+//           <div style={{textAlign:'center',marginBottom:'64px'}}>
+//             <h2 style={{color:'white',fontSize:'48px',fontWeight:'900',marginBottom:'16px',letterSpacing:'-1px'}}>{tr.contactTitle}</h2>
+//             <p style={{color:'rgba(255,255,255,0.8)',fontSize:'18px'}}>{tr.contactSubtitle}</p>
+//           </div>
+//         </AnimSection>
+//         <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'64px',alignItems:'start'}}>
+//           <AnimSection animation="anim-fadeInLeft">
+//             <div>
+//               <h3 style={{color:'white',fontSize:'24px',fontWeight:'800',marginBottom:'24px'}}>RenalGuard</h3>
+//               {[
+//                 {icon:<FiMail size={20} color={t.accent}/>,text:'a.muriellesarah@gmail.com'},
+//                 {icon:<FiPhone size={20} color={t.accent}/>,text:'+237 657 393 103'},
+//                 {icon:<FiMapPin size={20} color={t.accent}/>,text:'Yaoundé, Cameroon'},
+//                 {icon:<FiLinkedin size={20} color={t.accent}/>,text:'linkedin.com/in/murielle-kombou'}
+//               ].map((item,i)=>(
+//                 <div key={i} style={{
+//                   display:'flex',alignItems:'center',gap:'12px',
+//                   backgroundColor:'rgba(255,255,255,0.12)',
+//                   border:'1px solid rgba(255,255,255,0.2)',
+//                   borderRadius:'12px',padding:'14px 18px',marginBottom:'12px',
+//                   backdropFilter:'blur(10px)'
+//                 }}>
+//                   {item.icon}
+//                   <span style={{color:'rgba(255,255,255,0.9)',fontSize:'15px'}}>{item.text}</span>
+//                 </div>
+//               ))}
+//             </div>
+//           </AnimSection>
 
-          <AnimSection animation="anim-fadeInRight">
-            {sent ? (
-              <div style={{
-                backgroundColor:'rgba(255,255,255,0.12)',
-                border:'1px solid rgba(255,255,255,0.2)',
-                borderRadius:'24px',padding:'52px',textAlign:'center',
-                backdropFilter:'blur(10px)'
-              }}>
-                <FiHeart size={48} color={t.accent} style={{marginBottom:'16px'}}/>
-                <h3 style={{color:'white',fontSize:'24px',fontWeight:'800',marginBottom:'8px'}}>{tr.sentTitle}</h3>
-                <p style={{color:'rgba(255,255,255,0.8)'}}>{tr.sentDesc}</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} style={{
-                backgroundColor:'rgba(255,255,255,0.12)',
-                border:'1px solid rgba(255,255,255,0.2)',
-                borderRadius:'24px',padding:'40px',
-                display:'flex',flexDirection:'column',gap:'20px',
-                backdropFilter:'blur(10px)'
-              }}>
-                {[
-                  {label:'Full Name',type:'text',key:'name',ph:'Your full name'},
-                  {label:'Email',type:'text',key:'email',ph:'your@email.com'},
-                ].map(f=>(
-                  <div key={f.key}>
-                    <label style={{color:'white',fontWeight:'700',display:'block',marginBottom:'8px',fontSize:'14px'}}>{f.label}</label>
-                    <input
-                      type={f.type}
-                      value={form[f.key]}
-                      onChange={e=>handleChange(f.key, e.target.value)}
-                      placeholder={f.ph}
-                      style={{
-                        backgroundColor: errors[f.key] ? 'rgba(255,80,80,0.15)' : 'rgba(255,255,255,0.15)',
-                        border: errors[f.key] ? '1px solid rgba(255,100,100,0.8)' : '1px solid rgba(255,255,255,0.3)',
-                        color:'white',borderRadius:'12px',
-                        padding:'12px 16px',width:'100%',
-                        outline:'none',fontSize:'15px',
-                        transition:'all 0.2s ease'
-                      }}/>
-                    {errors[f.key] && (
-                      <div style={{display:'flex',alignItems:'center',gap:'6px',marginTop:'6px'}}>
-                        <FiAlertCircle size={14} color="#ff8080"/>
-                        <p style={{color:'#ff8080',fontSize:'12px',margin:0,fontWeight:'600'}}>{errors[f.key]}</p>
-                      </div>
-                    )}
-                  </div>
-                ))}
-                <div>
-                  <label style={{color:'white',fontWeight:'700',display:'block',marginBottom:'8px',fontSize:'14px'}}>Message</label>
-                  <textarea
-                    rows={4}
-                    value={form.message}
-                    onChange={e=>handleChange('message', e.target.value)}
-                    placeholder="Tell us about your interest in RenalGuard..."
-                    style={{
-                      backgroundColor: errors.message ? 'rgba(255,80,80,0.15)' : 'rgba(255,255,255,0.15)',
-                      border: errors.message ? '1px solid rgba(255,100,100,0.8)' : '1px solid rgba(255,255,255,0.3)',
-                      color:'white',borderRadius:'12px',
-                      padding:'12px 16px',width:'100%',
-                      outline:'none',fontSize:'15px',resize:'vertical',
-                      transition:'all 0.2s ease'
-                    }}/>
-                  {errors.message && (
-                    <div style={{display:'flex',alignItems:'center',gap:'6px',marginTop:'6px'}}>
-                      <FiAlertCircle size={14} color="#ff8080"/>
-                      <p style={{color:'#ff8080',fontSize:'12px',margin:0,fontWeight:'600'}}>{errors.message}</p>
-                    </div>
-                  )}
-                </div>
-                <button type="submit" style={{
-                  backgroundColor:t.accent,color:'white',
-                  padding:'14px',borderRadius:'12px',
-                  fontWeight:'800',fontSize:'16px',
-                  border:'none',cursor:'pointer',
-                  boxShadow:`0 6px 20px ${t.shadow}`,
-                  transition:'all 0.2s ease'
-                }}>
-                  {tr.sendBtn}
-                </button>
-              </form>
-            )}
-          </AnimSection>
-        </div>
-      </div>
-    </section>
-  );
-}
+//           <AnimSection animation="anim-fadeInRight">
+//             {sent ? (
+//               <div style={{
+//                 backgroundColor:'rgba(255,255,255,0.12)',
+//                 border:'1px solid rgba(255,255,255,0.2)',
+//                 borderRadius:'24px',padding:'52px',textAlign:'center',
+//                 backdropFilter:'blur(10px)'
+//               }}>
+//                 <FiHeart size={48} color={t.accent} style={{marginBottom:'16px'}}/>
+//                 <h3 style={{color:'white',fontSize:'24px',fontWeight:'800',marginBottom:'8px'}}>{tr.sentTitle}</h3>
+//                 <p style={{color:'rgba(255,255,255,0.8)'}}>{tr.sentDesc}</p>
+//               </div>
+//             ) : (
+//               <form onSubmit={handleSubmit} style={{
+//                 backgroundColor:'rgba(255,255,255,0.12)',
+//                 border:'1px solid rgba(255,255,255,0.2)',
+//                 borderRadius:'24px',padding:'40px',
+//                 display:'flex',flexDirection:'column',gap:'20px',
+//                 backdropFilter:'blur(10px)'
+//               }}>
+//                 {[
+//                   {label:'Full Name',type:'text',key:'name',ph:'Your full name'},
+//                   {label:'Email',type:'text',key:'email',ph:'your@email.com'},
+//                 ].map(f=>(
+//                   <div key={f.key}>
+//                     <label style={{color:'white',fontWeight:'700',display:'block',marginBottom:'8px',fontSize:'14px'}}>{f.label}</label>
+//                     <input
+//                       type={f.type}
+//                       value={form[f.key]}
+//                       onChange={e=>handleChange(f.key, e.target.value)}
+//                       placeholder={f.ph}
+//                       style={{
+//                         backgroundColor: errors[f.key] ? 'rgba(255,80,80,0.15)' : 'rgba(255,255,255,0.15)',
+//                         border: errors[f.key] ? '1px solid rgba(255,100,100,0.8)' : '1px solid rgba(255,255,255,0.3)',
+//                         color:'white',borderRadius:'12px',
+//                         padding:'12px 16px',width:'100%',
+//                         outline:'none',fontSize:'15px',
+//                         transition:'all 0.2s ease'
+//                       }}/>
+//                     {errors[f.key] && (
+//                       <div style={{display:'flex',alignItems:'center',gap:'6px',marginTop:'6px'}}>
+//                         <FiAlertCircle size={14} color="#ff8080"/>
+//                         <p style={{color:'#ff8080',fontSize:'12px',margin:0,fontWeight:'600'}}>{errors[f.key]}</p>
+//                       </div>
+//                     )}
+//                   </div>
+//                 ))}
+//                 <div>
+//                   <label style={{color:'white',fontWeight:'700',display:'block',marginBottom:'8px',fontSize:'14px'}}>Message</label>
+//                   <textarea
+//                     rows={4}
+//                     value={form.message}
+//                     onChange={e=>handleChange('message', e.target.value)}
+//                     placeholder="Tell us about your interest in RenalGuard..."
+//                     style={{
+//                       backgroundColor: errors.message ? 'rgba(255,80,80,0.15)' : 'rgba(255,255,255,0.15)',
+//                       border: errors.message ? '1px solid rgba(255,100,100,0.8)' : '1px solid rgba(255,255,255,0.3)',
+//                       color:'white',borderRadius:'12px',
+//                       padding:'12px 16px',width:'100%',
+//                       outline:'none',fontSize:'15px',resize:'vertical',
+//                       transition:'all 0.2s ease'
+//                     }}/>
+//                   {errors.message && (
+//                     <div style={{display:'flex',alignItems:'center',gap:'6px',marginTop:'6px'}}>
+//                       <FiAlertCircle size={14} color="#ff8080"/>
+//                       <p style={{color:'#ff8080',fontSize:'12px',margin:0,fontWeight:'600'}}>{errors.message}</p>
+//                     </div>
+//                   )}
+//                 </div>
+//                 <button type="submit" style={{
+//                   backgroundColor:t.accent,color:'white',
+//                   padding:'14px',borderRadius:'12px',
+//                   fontWeight:'800',fontSize:'16px',
+//                   border:'none',cursor:'pointer',
+//                   boxShadow:`0 6px 20px ${t.shadow}`,
+//                   transition:'all 0.2s ease'
+//                 }}>
+//                   {tr.sendBtn}
+//                 </button>
+//               </form>
+//             )}
+//           </AnimSection>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// } Active
 // function Contact({ t, lang }) {
 //   const tr = translations[lang];
 //   const [form, setForm] = useState({name:'',email:'',message:''});
