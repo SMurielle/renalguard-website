@@ -1048,6 +1048,7 @@ function Team({ t, lang }) {
 //     </section>
 //   );
 // } Active
+
 // function Contact({ t, lang }) {
 //   const tr = translations[lang];
 //   const [form, setForm] = useState({name:'',email:'',message:''});
